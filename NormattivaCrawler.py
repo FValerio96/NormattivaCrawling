@@ -11,7 +11,6 @@ in the starting page.
 def startingPageLinkToArray(url):
     # Effettua la richiesta GET alla pagina
     response = requests.get(url)
-    # Lista per contenere i link
     links = []
 
     # Verifica se la richiesta ha avuto successo
@@ -65,7 +64,9 @@ def takeBodyTextFromUrl(url):
     else:
         print("Errore nella richiesta HTTP:", response.status_code)
 
-
+'''
 links = startingPageLinkToArray(url)
 for link in links:
    takeBodyTextFromUrl(link)
+   '''
+takeBodyTextFromUrl("https://www.normattiva.it/atto/caricaArticolo?art.versione=3&art.idGruppo=6&art.flagTipoArticolo=0&art.codiceRedazionale=047U0001&art.idArticolo=57&art.idSottoArticolo=1&art.idSottoArticolo1=10&art.dataPubblicazioneGazzetta=1947-12-27&art.progressivo=0&art.imUpdate=true&")
