@@ -1,3 +1,5 @@
+import time
+
 import requests
 from bs4 import BeautifulSoup
 
@@ -46,27 +48,29 @@ this method take the text in <div class = "bodyTesto"> form the passed url
 def takeBodyTextFromUrl(url):
     # Effettua la richiesta GET alla pagina
     response = requests.get(url)
+    retries = 3
+    backoff_factor = 0.5
+    for i in range (retries):
+        # Verifica se la richiesta ha avuto successo
+        if response.status_code == 200:
+            # Parsing del contenuto HTML
+            soup = BeautifulSoup(response.content, 'html.parser')
 
-    # Verifica se la richiesta ha avuto successo
-    if response.status_code == 200:
-        # Parsing del contenuto HTML
-        soup = BeautifulSoup(response.content, 'html.parser')
+            # Trova il div con la classe specificata
+            div_container = soup.find('div', class_='bodyTesto')
 
-        # Trova il div con la classe specificata
-        div_container = soup.find('div', class_='bodyTesto')
-
-        # Stampare il contenuto del div
-        if div_container:
-            print(div_container.get_text())
+            # Stampare il contenuto del div
+            if div_container:
+                print(div_container.get_text())
+            else:
+                print("Nessun div con la classe 'bodyTesto' trovato nella pagina.")
+                time.sleep(backoff_factor * (2 ** i))
         else:
-            print("Nessun div con la classe 'bodyTesto' trovato nella pagina.")
+            print("Errore nella richiesta HTTP:", response.status_code)
 
-    else:
-        print("Errore nella richiesta HTTP:", response.status_code)
 
-'''
-links = startingPageLinkToArray(url)
-for link in links:
-   takeBodyTextFromUrl(link)
-   '''
-takeBodyTextFromUrl("https://www.normattiva.it/atto/caricaArticolo?art.versione=3&art.idGruppo=6&art.flagTipoArticolo=0&art.codiceRedazionale=047U0001&art.idArticolo=57&art.idSottoArticolo=1&art.idSottoArticolo1=10&art.dataPubblicazioneGazzetta=1947-12-27&art.progressivo=0&art.imUpdate=true&")
+#links = startingPageLinkToArray(url)
+#for link in links:
+  # takeBodyTextFromUrl(link)
+
+takeBodyTextFromUrl("https://www.normattiva.it//atto/caricaArticolo?art.versione=2&art.idGruppo=6&art.flagTipoArticolo=2&art.codiceRedazionale=010G0127&art.idArticolo=20&art.idSottoArticolo=1&art.idSottoArticolo1=10&art.dataPubblicazioneGazzetta=2010-07-07&art.progressivo=0&")

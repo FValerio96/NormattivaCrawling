@@ -1,8 +1,12 @@
+from telnetlib import EC
+
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 
-
+from selenium.webdriver.chrome import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.wait import WebDriverWait
 
 
 def find_showArticle_links(url):
@@ -34,9 +38,3 @@ def find_showArticle_links(url):
 
     return showArticle_links
 
-
-# Esempio di utilizzo
-url = "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:costituzione"
-showArticle_links = find_showArticle_links(url)
-# for link in showArticle_links:
-#   takeBodyTextFromUrl(link)
