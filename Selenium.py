@@ -1,3 +1,4 @@
+import requests
 from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup
 from selenium import webdriver
@@ -6,14 +7,15 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 def takeHTMLFromUrl(url, driver):
+
     try:
         findTextInClassBS(url, "bodyTesto", driver)
-        articoloSuccessivov2(driver, url)
-        url2 = driver.current_url
-        findTextInClassBS(url2, "bodyTesto", driver)
-        url3 = driver.current_url
-        articoloSuccessivov2(driver, url3)
-        findTextInClassBS(url, "bodyTesto", driver)
+        url = driver.current_url
+        while articoloSuccessivov2(driver, url):
+            findTextInClassBS(url, "bodyTesto", driver)
+            url = driver.current_url
+
+
     except:
         print("Eccezione")
 
@@ -60,13 +62,48 @@ def articoloSuccessivov2(driver, url):
             links[1].click()
         else:
             print("Non ci sono abbastanza link 'articolo successivo' nella pagina")
+        return True
     except Exception as e:
         print("Errore durante il clic sul link:", e)
+        return False
 
+
+def get_number_of_ArticoloSuccessivo(className, url):
+    try:
+        # Effettua una richiesta GET all'URL
+        response = requests.get(url)
+
+        # Verifica se la richiesta ha avuto successo
+        if response.status_code == 200:
+            # Parsa il contenuto HTML della pagina con BeautifulSoup
+            soup = BeautifulSoup(response.content, 'html.parser')
+
+            # Trova l'elemento con la classe specificata
+            target_element = soup.find('div', class_=className)
+
+            # Verifica se l'elemento è stato trovato
+            if target_element:
+                # Trova l'unordered list all'interno dell'elemento trovato
+                ul = target_element.find('ul')
+
+                # Conta il numero di elementi <li> all'interno dell'unordered list
+                if ul:
+                    number_of_items = len(ul.find_all('li'))
+                    return number_of_items
+                else:
+                    print("Nessun unordered list trovato all'interno dell'elemento con classe", className)
+            else:
+                print("Nessun elemento trovato con classe", className)
+        else:
+            print("Errore durante la richiesta GET:", response.status_code)
+    except Exception as e:
+        print("Errore durante l'analisi della pagina:", e)
 
 '''
                 MAIN
 '''
+get_number_of_ArticoloSuccessivo("allegati_lista", "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:costituzione")
+
 # Percorso del driver Chrome
 chromedriver_path = 'chrome/chromedriver.exe'
 chrome_options = Options()
