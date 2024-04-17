@@ -70,7 +70,4 @@ def takeBodyTextFromUrl(url):
 
 
 #links = startingPageLinkToArray(url)
-#for link in links:
-  # takeBodyTextFromUrl(link)
 
-takeBodyTextFromUrl("https://www.normattiva.it//atto/caricaArticolo?art.versione=2&art.idGruppo=6&art.flagTipoArticolo=2&art.codiceRedazionale=010G0127&art.idArticolo=20&art.idSottoArticolo=1&art.idSottoArticolo1=10&art.dataPubblicazioneGazzetta=2010-07-07&art.progressivo=0&")

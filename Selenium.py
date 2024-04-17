@@ -1,4 +1,3 @@
-import requests
 from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup
 from selenium import webdriver
@@ -7,7 +6,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 def takeHTMLFromUrl(url, driver):
-
     try:
         findTextInClassBS(url, "bodyTesto", driver)
         url = driver.current_url
@@ -16,10 +14,31 @@ def takeHTMLFromUrl(url, driver):
             url = driver.current_url
 
 
-    except:
-        print("Eccezione")
+    except Exception as e:
+        print("Eccezione: " + e)
+
+    finally:
+        print("articoli finiti")
+        return driver
+
+'''
+taking a list of url to applicate crawling
+'''
+def takeHTMLFromlinks(links, driver):
+    for url in links:
+        try:
+            findTextInClassBS(url, "bodyTesto", driver)
+            url = driver.current_url
+            while articoloSuccessivov2(driver, url):
+                findTextInClassBS(url, "bodyTesto", driver)
+                url = driver.current_url
 
 
+        except:
+            print("Eccezione")
+
+        finally:
+            print("articoli finiti")
 
 def findTextInClassBS(url, className, driver):
     # Effettua la richiesta GET alla pagina
@@ -37,18 +56,6 @@ def findTextInClassBS(url, className, driver):
     else:
         print("Nessun div con la classe"+ className + " nella pagina.")
 
-def articoloSuccessivo(driver, url):
-    # Attendere fino a quando il link non è cliccabile (presente nella pagina)
-    link = WebDriverWait(driver, 10).until(
-        EC.element_to_be_clickable((By.XPATH, '//a[@class="btn"]'))
-    )
-    link.click()
-
-
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-
 
 def articoloSuccessivov2(driver, url):
     try:
@@ -61,52 +68,19 @@ def articoloSuccessivov2(driver, url):
         # Se ci sono almeno due link, clicca sul secondo link
         if len(links) >= 2 and links[1].accessible_name == "articolo successivo":
             links[1].click()
+            return True
         else:
             print("Non ci sono altri link 'articolo successivo' nella pagina")
             #e quindi possiamo fermarci
-
             return False
-        return True
     except Exception as e:
         print("Errore durante il clic sul link:", e)
         return False
 
 
-def get_number_of_ArticoloSuccessivo(className, url):
-    try:
-        # Effettua una richiesta GET all'URL
-        response = requests.get(url)
-
-        # Verifica se la richiesta ha avuto successo
-        if response.status_code == 200:
-            # Parsa il contenuto HTML della pagina con BeautifulSoup
-            soup = BeautifulSoup(response.content, 'html.parser')
-
-            # Trova l'elemento con la classe specificata
-            target_element = soup.find('div', class_=className)
-
-            # Verifica se l'elemento è stato trovato
-            if target_element:
-                # Trova l'unordered list all'interno dell'elemento trovato
-                ul = target_element.find('ul')
-
-                # Conta il numero di elementi <li> all'interno dell'unordered list
-                if ul:
-                    number_of_items = len(ul.find_all('li'))
-                    return number_of_items
-                else:
-                    print("Nessun unordered list trovato all'interno dell'elemento con classe", className)
-            else:
-                print("Nessun elemento trovato con classe", className)
-        else:
-            print("Errore durante la richiesta GET:", response.status_code)
-    except Exception as e:
-        print("Errore durante l'analisi della pagina:", e)
-
 '''
                 MAIN
 '''
-get_number_of_ArticoloSuccessivo("allegati_lista", "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:costituzione")
 
 # Percorso del driver Chrome
 chromedriver_path = 'chrome/chromedriver.exe'
