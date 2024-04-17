@@ -53,15 +53,19 @@ from selenium.webdriver.support import expected_conditions as EC
 def articoloSuccessivov2(driver, url):
     try:
         # Attendere fino a quando almeno due link non sono cliccabili (presenti nella pagina)
+        #ciò si  basa sul fatto che il secondo link è articolo successivo
         links = WebDriverWait(driver, 10).until(
             EC.presence_of_all_elements_located((By.XPATH, '//a[@class="btn"]'))
         )
 
         # Se ci sono almeno due link, clicca sul secondo link
-        if len(links) >= 2:
+        if len(links) >= 2 and links[1].accessible_name == "articolo successivo":
             links[1].click()
         else:
-            print("Non ci sono abbastanza link 'articolo successivo' nella pagina")
+            print("Non ci sono altri link 'articolo successivo' nella pagina")
+            #e quindi possiamo fermarci
+
+            return False
         return True
     except Exception as e:
         print("Errore durante il clic sul link:", e)
