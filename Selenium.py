@@ -80,7 +80,8 @@ def articoloSuccessivov2(driver, url):
 
 '''
                 MAIN
-'''
+
+
 
 # Percorso del driver Chrome
 chromedriver_path = 'chrome/chromedriver.exe'
@@ -91,3 +92,4 @@ chrome_options.add_argument("webdriver.chrome.driver=" + chromedriver_path)
 driver = webdriver.Chrome(options=chrome_options)
 takeHTMLFromUrl('https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:costituzione', driver)
 
+'''
