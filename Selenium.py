@@ -64,10 +64,9 @@ class Crawler:
             }
 
             if self.lastRowInserted is None or self.lastRowInserted != text_content:
-                # Aggiungi il file JSON come nuova riga nel file JSONL
                 with open(self.jsonl_file_path, "a") as jsonl_file:
                     json.dump(json_data, jsonl_file)
-                    jsonl_file.write(",\n")
+                    jsonl_file.write("\n")
 
                 self.lastRowInserted = text_content
 
@@ -121,6 +120,52 @@ class Crawler:
     def setNewUrl(self, url):
         self.driver.get(url)
 
+    def paginaSuccessiva(self):
+        pageNumber = 2
+        pageNumberString = "2"
+        try:
+            linkToClick: WebElement | None = None
+
+            links = None
+            allTimeout = [10, 20, 30, 50, 60]
+
+            for timeout in allTimeout:
+                print('Esecuzione con timeout: ', timeout)
+                try:
+                    links = WebDriverWait(self.driver, timeout).until(
+                        EC.presence_of_all_elements_located((By.XPATH, '//a[@class="btn"]'))
+                    )
+
+                except Exception as e:
+                    if isinstance(e, KeyboardInterrupt):
+                        raise KeyboardInterrupt
+                    print('Timeout: ', timeout + "and url: " + self.driver.current_url)
+
+                for link in links:
+                    if link.accessible_name == pageNumber or link.accessible_name == pageNumberString:
+                        linkToClick = link
+                        break
+
+                if linkToClick is not None:
+                    pageNumber = pageNumber + 1
+                    break
+            #se è avvalorato è avvalorato con articolo successivo
+            if linkToClick is not None:
+                print("trovato prossimo link da seguire, clicco " + linkToClick.accessible_name)
+                linkToClick.click()
+                return True
+
+            else:
+                print("Non ci sono altri link 'articolo successivo' nella pagina")
+                # e quindi possiamo fermarci.
+                return False
+        except Exception as e:
+            if isinstance(e, KeyboardInterrupt):
+                raise KeyboardInterrupt
+            print("Errore durante il clic sul link:", e)
+            print('Timeout: ', timeout + "and url: " + self.driver.current_url)
+            return False
+
 '''
 
 # Percorso del driver Chrome
@@ -139,3 +184,5 @@ crawler = Crawler(
 crawler.takeHTMLFromUrl()
 
 '''
+
+
