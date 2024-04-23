@@ -18,7 +18,7 @@ class Crawler:
         self.setNewUrl(url)
         self.jsonl_file_path = json_file_path
         self.lastRowInserted = None
-        #self.current_url = url
+
 
     def takeHTMLFromUrl(self):
         try:
@@ -101,8 +101,8 @@ class Crawler:
 
                 if linkToClick is not None:
                     break
-
-            if linkToClick.accessible_name == "articolo successivo":
+            #se è avvalorato è avvalorato con articolo successivo
+            if linkToClick is not None:
                 print("trovato prossimo link da seguire, clicco " + linkToClick.accessible_name)
                 linkToClick.click()
                 return True
@@ -115,6 +115,7 @@ class Crawler:
             if isinstance(e, KeyboardInterrupt):
                 raise KeyboardInterrupt
             print("Errore durante il clic sul link:", e)
+            print('Timeout: ', timeout + "and url: " + self.driver.current_url)
             return False
 
     def setNewUrl(self, url):
