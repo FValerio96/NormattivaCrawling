@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d872d058-ba7c-4e0b-be66-0a65c6378496" name="Changes" comment="iniziata estrazione dati">
-      <change afterPath="$PROJECT_DIR$/ElencoAtti.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataset/JsonCounter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataset/costituzione e codici.jsonl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NormattivaCrawler.py" beforeDir="false" afterPath="$PROJECT_DIR$/NormattivaCrawler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Selenium.py" beforeDir="false" afterPath="$PROJECT_DIR$/Selenium.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataset/Test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,30 +39,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.ElencoAtti.executor": "Run",
-    "Python.JsonCounter.executor": "Run",
-    "Python.LinkToArray.executor": "Run",
-    "Python.Main.executor": "Run",
-    "Python.NormattivaCrawler (1).executor": "Run",
-    "Python.Selenium (1).executor": "Run",
-    "Python.Selenium.executor": "Run",
-    "Python.Test.executor": "Run",
-    "Python.test.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "elenco-atti",
-    "last_opened_file_path": "C:/Users/flava/OneDrive/Desktop/NormattivaCrawling",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.ElencoAtti.executor&quot;: &quot;Run&quot;,
+    &quot;Python.JsonCounter.executor&quot;: &quot;Run&quot;,
+    &quot;Python.LinkToArray.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.NormattivaCrawler (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.Selenium (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.Selenium.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;elenco-atti&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/flava/OneDrive/Desktop/NormattivaCrawling&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\flava\PycharmProjects\NormattivaCrawling\chrome" />
@@ -77,7 +74,7 @@
       <recent name="C:\Users\flava\PycharmProjects\NormattivaCrawling\" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Test">
+  <component name="RunManager" selected="Python.Main">
     <configuration name="ElencoAtti" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="NormattivaCrawling" />
       <option name="ENV_FILES" value="" />
@@ -195,11 +192,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Main" />
+        <item itemvalue="Python.Selenium (1)" />
         <item itemvalue="Python.Test" />
         <item itemvalue="Python.JsonCounter" />
         <item itemvalue="Python.ElencoAtti" />
-        <item itemvalue="Python.Main" />
-        <item itemvalue="Python.Selenium (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -235,7 +232,9 @@
       <workItem from="1713686522245" duration="119000" />
       <workItem from="1713686845252" duration="25000" />
       <workItem from="1713687247221" duration="19303000" />
-      <workItem from="1713861414464" duration="6858000" />
+      <workItem from="1713861414464" duration="8099000" />
+      <workItem from="1713965558109" duration="6583000" />
+      <workItem from="1713972605796" duration="837000" />
     </task>
     <task id="LOCAL-00001" summary="interally modified the idea, now i'm trying to drive the crawler">
       <option name="closed" value="true" />
@@ -325,7 +324,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713768024597</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="iniziata estrazione dati">
+      <option name="closed" value="true" />
+      <created>1713877568829</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1713877568829</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -347,6 +354,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/NormattivaCrawling$ElencoAtti.coverage" NAME="ElencoAtti Coverage Results" MODIFIED="1713862790477" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/NormattivaCrawling$Main.coverage" NAME="Main Coverage Results" MODIFIED="1713804445140" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/NormattivaCrawling$Selenium__1_.coverage" NAME="Selenium (1) Coverage Results" MODIFIED="1713972453740" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/NormattivaCrawling$JsonCounter.coverage" NAME="JsonCounter Coverage Results" MODIFIED="1713864472729" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dataset" />
     <SUITE FILE_PATH="coverage/NormattivaCrawling$Test.coverage" NAME="Test Coverage Results" MODIFIED="1713875212907" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dataset" />
   </component>

@@ -11,7 +11,7 @@ from NormattivaCrawler import startingPageLinkToArray
 from Selenium import Crawler
 
 def write_links_to_file(links, filename):
-    with open(filename, 'w') as f:
+    with open(filename, 'a') as f:
         for link in links:
             f.write(link + '\n')
 
@@ -27,10 +27,13 @@ def remove_first_link_from_file(filename):
     with open(filename, 'w') as f:
         f.writelines(lines[1:])
 
+
+
+'''
+
 links = load_links_from_file("Links.txt")
 for link in links:
     print(link)
-
 
 url = "https://www.normattiva.it/staticPage/codici"
 #links = startingPageLinkToArray(url)
@@ -50,3 +53,30 @@ for link in links:
     print("crawling of " + link)
     crawler.takeHTMLFromUrl()
     remove_first_link_from_file("Links.txt")
+'''
+
+
+chromedriver_path = 'chrome/chromedriver.exe'
+chrome_options = Options()
+chrome_options.add_argument("webdriver.chrome.driver=" + chromedriver_path)
+driver = webdriver.Chrome(options=chrome_options)
+# jsonl_file_path = check_or_create_jsonl_file()
+crawler = Crawler(
+    driver=driver,
+    url='https://www.normattiva.it/ricerca/elencoPerData/anno/2015?tabID=0.2985707928192325&title=lbl.risultatoRicerca',
+    json_file_path='json_file.json'
+)
+
+numero_articoli = crawler.conta_numero_articoli()
+next_page = 2
+links = crawler.prendi_link_in_div()
+write_links_to_file(links, "links.txt")  # Scrivi i link su file
+while (crawler.clicca_pagina_successiva(next_page)) :
+    next_page +=1
+    links = crawler.prendi_link_in_div()
+    write_links_to_file(links, "links.txt")  # Scrivi i link su file
+
+
+links = load_links_from_file("Links.txt")
+for link in links:
+    print(link)

@@ -18,7 +18,7 @@ link = links[0]
 
 crawler = Crawler(driver = driver, url = link, json_file_path = None)
 print("crawling of " + link)
-while(crawler.paginaSuccessiva()):
+while(crawler.scorrimento_pagina_articoli()):
     print(crawler.driver.current_url)
 
 
