@@ -74,6 +74,7 @@ class Crawler:
             else:
                 print('Articolo già inserito')
 
+
     def articoloSuccessivov2(self):
         try:
             linkToClick: WebElement | None = None
@@ -238,10 +239,7 @@ class Crawler:
         else:
             print("Nessun div con la classe col-12 box paginatore_info py-2 nella pagina.")
 
-    '''
-        this method want the next page and click that.
-    '''
-
+'''
 # Percorso del driver Chrome
 chromedriver_path = 'chrome/chromedriver.exe'
 chrome_options = Options()
@@ -266,3 +264,4 @@ while (crawler.clicca_pagina_successiva(next_page)) :
 
 for link in links:
     print(link)
+'''

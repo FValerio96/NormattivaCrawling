@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d872d058-ba7c-4e0b-be66-0a65c6378496" name="Changes" comment="iniziata estrazione dati">
+    <list default="true" id="d872d058-ba7c-4e0b-be66-0a65c6378496" name="Changes" comment="preso un anno siamo in grado di generare tutti i suoi link. next Step: prelevare tutti gli articoli in un JSON">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestioneDataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/GestioneDataset.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Selenium.py" beforeDir="false" afterPath="$PROJECT_DIR$/Selenium.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataset/Test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/normattiva1.jsonl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/links.txt" beforeDir="false" afterPath="$PROJECT_DIR$/links.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -234,7 +237,8 @@
       <workItem from="1713687247221" duration="19303000" />
       <workItem from="1713861414464" duration="8099000" />
       <workItem from="1713965558109" duration="6583000" />
-      <workItem from="1713972605796" duration="837000" />
+      <workItem from="1713972605796" duration="10958000" />
+      <workItem from="1714136903032" duration="599000" />
     </task>
     <task id="LOCAL-00001" summary="interally modified the idea, now i'm trying to drive the crawler">
       <option name="closed" value="true" />
@@ -332,7 +336,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713877568829</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="preso un anno siamo in grado di generare tutti i suoi link. next Step: prelevare tutti gli articoli in un JSON">
+      <option name="closed" value="true" />
+      <created>1713973598195</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1713973598195</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -349,12 +361,13 @@
     <MESSAGE value="aggiunto main" />
     <MESSAGE value="utilizzato un time.sleep posto a 5 secondi per contrastare la lentezza del server nel fornirmi la pagina ed evitando dunque di avere un ri-uso di link o testi precedenti." />
     <MESSAGE value="iniziata estrazione dati" />
-    <option name="LAST_COMMIT_MESSAGE" value="iniziata estrazione dati" />
+    <MESSAGE value="preso un anno siamo in grado di generare tutti i suoi link. next Step: prelevare tutti gli articoli in un JSON" />
+    <option name="LAST_COMMIT_MESSAGE" value="preso un anno siamo in grado di generare tutti i suoi link. next Step: prelevare tutti gli articoli in un JSON" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/NormattivaCrawling$ElencoAtti.coverage" NAME="ElencoAtti Coverage Results" MODIFIED="1713862790477" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/NormattivaCrawling$Main.coverage" NAME="Main Coverage Results" MODIFIED="1713804445140" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/NormattivaCrawling$Selenium__1_.coverage" NAME="Selenium (1) Coverage Results" MODIFIED="1713972453740" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/NormattivaCrawling$Main.coverage" NAME="Main Coverage Results" MODIFIED="1714041361381" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/NormattivaCrawling$JsonCounter.coverage" NAME="JsonCounter Coverage Results" MODIFIED="1713864472729" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dataset" />
     <SUITE FILE_PATH="coverage/NormattivaCrawling$Test.coverage" NAME="Test Coverage Results" MODIFIED="1713875212907" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dataset" />
   </component>
