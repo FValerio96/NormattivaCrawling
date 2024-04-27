@@ -15,20 +15,22 @@ import re
 
 
 class Crawler:
-    def __init__(self, driver, url, json_file_path):
+    def __init__(self, driver, url, json_file_path, className: str="bodyTesto"):
         self.driver: WebDriver = driver
         # go to the url
         self.setNewUrl(url)
         self.jsonl_file_path = json_file_path
         self.lastRowInserted = None
+        self.className: str = className
 
     def takeHTMLFromUrl(self):
         try:
-            self.findTextInClassBS("bodyTesto")
-
-            while self.articoloSuccessivov2():
-                time.sleep(4)
-                self.findTextInClassBS("bodyTesto")
+            continueCrawling = True
+            self.findTextInClassBS()
+            #se cado nel loop di articolo successivo con rimando a se stesso vado al prossimo link
+            #dopo aver visionato centinaia di pagine ciò è accaduto solo nell'ultimo articolo dei link.
+            while continueCrawling:
+                continueCrawling = self.articoloSuccessivov2()
 
         except Exception as e:
             if isinstance(e, KeyboardInterrupt):
@@ -38,42 +40,53 @@ class Crawler:
         finally:
             print("articoli finiti")
 
-    def findTextInClassBS(self, className):
-        text_content = None
-        WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.TAG_NAME, 'body')))
+    def findTextInClassBS(self):
+        try:
+            text_content = None
+            WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.TAG_NAME, 'body')))
 
-        pageSource = self.driver.page_source
-        soup = BeautifulSoup(pageSource, 'html.parser')
+            pageSource = self.driver.page_source
+            soup = BeautifulSoup(pageSource, 'html.parser')
 
-        # Trova il div con la classe specificata
-        div_container = soup.find('div', class_=className)
+            # Trova il div con la classe specificata
+            div_container = soup.find('div', class_=self.className)
 
-        # Stampare il contenuto del div
-        if div_container:
-            text_content = div_container.get_text()
-        else:
-            print("Nessun div con la classe" + className + " nella pagina.")
-
-        # Se text_content non è vuoto, procedi con la creazione del JSON ed il suo inserimento nel JSONL
-        if text_content is not None:
-            # Crea il file JSON con i campi richiesti
-            json_data = {
-                "text": text_content,
-                "url": self.driver.current_url,
-                "source": "normattiva",
-                "timestamp": datetime.now().isoformat()
-            }
-
-            if self.lastRowInserted is None or self.lastRowInserted != text_content:
-                with open(self.jsonl_file_path, "a") as jsonl_file:
-                    json.dump(json_data, jsonl_file)
-                    jsonl_file.write("\n")
-
-                self.lastRowInserted = text_content
-
+            # Stampare il contenuto del div
+            if div_container:
+                text_content = div_container.get_text()
             else:
-                print('Articolo già inserito')
+                print("Nessun div con la classe" + self.className + " nella pagina.")
 
+            # Se text_content non è vuoto, procedi con la creazione del JSON ed il suo inserimento nel JSONL
+            if text_content is not None:
+                # Crea il file JSON con i campi richiesti
+                json_data = {
+                    "text": text_content,
+                    "url": self.driver.current_url,
+                    "source": "normattiva",
+                    "timestamp": datetime.now().isoformat()
+                }
+
+                if self.lastRowInserted is not None:
+                    if self.lastRowInserted != text_content:
+                        self.scrivi_articolo(json_data, text_content)
+                        return True
+                    else:
+                        print("articolo gia inserito")
+                else:
+                    self.scrivi_articolo(json_data, text_content)
+                    return True
+            return False
+        except Exception as e:
+            print("findText exception : ", e.__str__())
+
+    def scrivi_articolo(self, json_data, text_content):
+        with open(self.jsonl_file_path, "a") as jsonl_file:
+            json.dump(json_data, jsonl_file)
+            jsonl_file.write("\n")
+
+        self.lastRowInserted = text_content
+        return True
 
     def articoloSuccessivov2(self):
         try:
@@ -94,30 +107,31 @@ class Crawler:
                 except Exception as e:
                     if isinstance(e, KeyboardInterrupt):
                         raise KeyboardInterrupt
-                    print('Timeout: ', timeout + "and url: " + self.driver.current_url)
+                    print('Timeout: ', timeout, "and url: ", self.driver.current_url)
 
                 for link in links:
                     if link.accessible_name == "articolo successivo":
                         linkToClick = link
                         break
 
-                if linkToClick is not None:
-                    break
             # se è avvalorato è avvalorato con articolo successivo
-            if linkToClick is not None:
-                print("trovato prossimo link da seguire, clicco " + linkToClick.accessible_name)
-                linkToClick.click()
-                return True
+                if linkToClick is not None:
+                    print("trovato prossimo link da seguire, clicco " + str(linkToClick.accessible_name))
+                    linkToClick.click()
+                    time.sleep(4)
+                    continueCrawling = self.findTextInClassBS()
 
-            else:
-                print("Non ci sono altri link 'articolo successivo' nella pagina")
+                    if continueCrawling:
+                        return True
+                else:
+                    print("Non ci sono altri link 'articolo successivo' nella pagina")
                 # e quindi possiamo fermarci.
-                return False
+            return False
         except Exception as e:
             if isinstance(e, KeyboardInterrupt):
                 raise KeyboardInterrupt
             print("Errore durante il clic sul link:", e)
-            print('Timeout: ', timeout + "and url: " + self.driver.current_url)
+            print('Timeout: ', timeout, "and url: ", self.driver.current_url)
             return False
 
     def setNewUrl(self, url):
