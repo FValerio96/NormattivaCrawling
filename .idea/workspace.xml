@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d872d058-ba7c-4e0b-be66-0a65c6378496" name="Changes" comment="iniziata estrazione dati">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Selenium.py" beforeDir="false" afterPath="$PROJECT_DIR$/Selenium.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/normattiva1.jsonl" beforeDir="false" afterPath="$PROJECT_DIR$/dataset/normattiva1.jsonl" afterDir="false" />
-    </list>
+    <list default="true" id="d872d058-ba7c-4e0b-be66-0a65c6378496" name="Changes" comment="aggiustato problema loop, terminato 2015, ma da post processare" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,16 +36,19 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Python.ElencoAtti.executor&quot;: &quot;Run&quot;,
+    &quot;Python.JsonCounter.executor&quot;: &quot;Run&quot;,
     &quot;Python.LinkToArray.executor&quot;: &quot;Run&quot;,
     &quot;Python.Main.executor&quot;: &quot;Run&quot;,
     &quot;Python.NormattivaCrawler (1).executor&quot;: &quot;Run&quot;,
     &quot;Python.Selenium (1).executor&quot;: &quot;Run&quot;,
     &quot;Python.Selenium.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Test.executor&quot;: &quot;Run&quot;,
     &quot;Python.test.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;bug-art3&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/flava/PycharmProjects/NormattivaCrawling&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;elenco-atti&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/flava/OneDrive/Desktop/NormattivaCrawling&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -65,12 +63,36 @@
       <recent name="C:\Users\flava\PycharmProjects\NormattivaCrawling\chrome" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\flava\OneDrive\Desktop\NormattivaCrawling\dataset" />
       <recent name="C:\Users\flava\PycharmProjects\NormattivaCrawling\dataset" />
       <recent name="C:\Users\flava\PycharmProjects\NormattivaCrawling" />
       <recent name="C:\Users\flava\PycharmProjects\NormattivaCrawling\" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Main">
+  <component name="RunManager" selected="Python.postProcessor">
+    <configuration name="JsonCounter" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="NormattivaCrawling" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/dataset" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dataset/JsonCounter.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="NormattivaCrawling" />
       <option name="ENV_FILES" value="" />
@@ -86,29 +108,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="NormattivaCrawler (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="NormattivaCrawling" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/NormattivaCrawler.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -140,7 +139,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Selenium" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="NormattivaCrawling" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -149,12 +148,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/.venv" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/dataset" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\flava\PycharmProjects\NormattivaCrawling\Selenium.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dataset/Test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -163,7 +162,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="postProcessor" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="NormattivaCrawling" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -177,7 +176,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/postProcessor.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -188,11 +187,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.postProcessor" />
         <item itemvalue="Python.Main" />
         <item itemvalue="Python.Selenium (1)" />
-        <item itemvalue="Python.NormattivaCrawler (1)" />
-        <item itemvalue="Python.Selenium" />
-        <item itemvalue="Python.test" />
+        <item itemvalue="Python.Test" />
+        <item itemvalue="Python.JsonCounter" />
       </list>
     </recent_temporary>
   </component>
@@ -228,6 +227,10 @@
       <workItem from="1713686522245" duration="119000" />
       <workItem from="1713686845252" duration="25000" />
       <workItem from="1713687247221" duration="19303000" />
+      <workItem from="1713861414464" duration="8099000" />
+      <workItem from="1713965558109" duration="6583000" />
+      <workItem from="1713972605796" duration="10958000" />
+      <workItem from="1714136903032" duration="599000" />
     </task>
     <task id="LOCAL-00001" summary="interally modified the idea, now i'm trying to drive the crawler">
       <option name="closed" value="true" />
@@ -317,7 +320,31 @@
       <option name="project" value="LOCAL" />
       <updated>1713768024597</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="iniziata estrazione dati">
+      <option name="closed" value="true" />
+      <created>1713877568829</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1713877568829</updated>
+    </task>
+    <task id="LOCAL-00013" summary="preso un anno siamo in grado di generare tutti i suoi link. next Step: prelevare tutti gli articoli in un JSON">
+      <option name="closed" value="true" />
+      <created>1713973598195</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1713973598195</updated>
+    </task>
+    <task id="LOCAL-00014" summary="aggiustato problema loop, terminato 2015, ma da post processare">
+      <option name="closed" value="true" />
+      <created>1714210290341</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1714210290341</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -334,9 +361,15 @@
     <MESSAGE value="aggiunto main" />
     <MESSAGE value="utilizzato un time.sleep posto a 5 secondi per contrastare la lentezza del server nel fornirmi la pagina ed evitando dunque di avere un ri-uso di link o testi precedenti." />
     <MESSAGE value="iniziata estrazione dati" />
-    <option name="LAST_COMMIT_MESSAGE" value="iniziata estrazione dati" />
+    <MESSAGE value="preso un anno siamo in grado di generare tutti i suoi link. next Step: prelevare tutti gli articoli in un JSON" />
+    <MESSAGE value="aggiustato problema loop, terminato 2015, ma da post processare" />
+    <option name="LAST_COMMIT_MESSAGE" value="aggiustato problema loop, terminato 2015, ma da post processare" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/NormattivaCrawling$Main.coverage" NAME="Main Coverage Results" MODIFIED="1713804445140" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/NormattivaCrawling$ElencoAtti.coverage" NAME="ElencoAtti Coverage Results" MODIFIED="1713862790477" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/NormattivaCrawling$Selenium__1_.coverage" NAME="Selenium (1) Coverage Results" MODIFIED="1713972453740" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/NormattivaCrawling$Main.coverage" NAME="Main Coverage Results" MODIFIED="1714209919607" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/NormattivaCrawling$JsonCounter.coverage" NAME="JsonCounter Coverage Results" MODIFIED="1713864472729" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dataset" />
+    <SUITE FILE_PATH="coverage/NormattivaCrawling$Test.coverage" NAME="Test Coverage Results" MODIFIED="1713875212907" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dataset" />
   </component>
 </project>
