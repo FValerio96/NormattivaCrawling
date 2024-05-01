@@ -60,15 +60,18 @@ chromedriver_path = 'chrome/chromedriver.exe'
 chrome_options = Options()
 chrome_options.add_argument("webdriver.chrome.driver=" + chromedriver_path)
 driver = webdriver.Chrome(options=chrome_options)
-jsonl_file_path = check_or_create_jsonl_file("2015 elenco atti.jsonl")
+'''
+!!!AD OGNI NUOVO ANNO RICORDA DI MODIFICARE IL FILE!!!
+'''
+jsonl_file_path = check_or_create_jsonl_file("2016 elenco atti.jsonl")
 crawler = Crawler(
     driver=driver,
-    url='https://www.normattiva.it/ricerca/elencoPerData/anno/2015?tabID=0.2985707928192325&title=lbl.risultatoRicerca',
+    url='https://www.normattiva.it/ricerca/elencoPerData/anno/2016?tabID=0.06629760683032282&title=lbl.risultatoRicerca',
     json_file_path='json_file.json'
 )
 
 ''' PRELIEVO ARTICOLI'''
-'''
+
 numero_articoli = crawler.conta_numero_articoli()
 next_page = 2
 links = crawler.prendi_link_in_div()
@@ -77,7 +80,7 @@ while (crawler.clicca_pagina_successiva(next_page)) :
     next_page +=1
     links = crawler.prendi_link_in_div()
     write_links_to_file(links, "links.txt")  # Scrivi i link su file
-'''
+
 
 links = load_links_from_file("Links.txt")
 

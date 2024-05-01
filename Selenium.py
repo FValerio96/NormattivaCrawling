@@ -156,7 +156,7 @@ class Crawler:
             numero_articoli = (re.search(r'\d+', text_content))
             if numero_articoli:
                 numero_articoli = int(numero_articoli.group())
-            print("il numero degli articoli è: " + str(numero_articoli))
+            print("il numero degli atti è: " + str(numero_articoli))
             # sapendo che il contenuto delle pagine è di max 20 divido numero_articoli per 20,
             # arrrotondo (eventualmente) per eccesso ed ho il numero di pagine.
             pageNumber = int(numero_articoli / 20)
