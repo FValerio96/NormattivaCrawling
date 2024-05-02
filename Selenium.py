@@ -23,10 +23,10 @@ class Crawler:
         self.lastRowInserted = None
         self.className: str = className
 
-    def takeHTMLFromUrl(self):
+    def acquisisci_articoli_da_url(self):
         try:
             continueCrawling = True
-            self.findTextInClassBS()
+            self.trova_testo_in_classe_BS()
             #se cado nel loop di articolo successivo con rimando a se stesso vado al prossimo link
             #dopo aver visionato centinaia di pagine ciò è accaduto solo nell'ultimo articolo dei link.
             while continueCrawling:
@@ -40,7 +40,7 @@ class Crawler:
         finally:
             print("articoli finiti")
 
-    def findTextInClassBS(self):
+    def trova_testo_in_classe_BS(self):
         try:
             text_content = None
             WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.TAG_NAME, 'body')))
@@ -119,7 +119,7 @@ class Crawler:
                     print("trovato prossimo link da seguire, clicco " + str(linkToClick.accessible_name))
                     linkToClick.click()
                     time.sleep(4)
-                    continueCrawling = self.findTextInClassBS()
+                    continueCrawling = self.trova_testo_in_classe_BS()
 
                     if continueCrawling:
                         return True
@@ -140,7 +140,7 @@ class Crawler:
     '''
     this method return the number of article in page
     '''
-    def conta_numero_articoli(self):
+    def conta_numero_atti(self):
         text_content = None
         WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.TAG_NAME, 'body')))
         pageSource = self.driver.page_source
@@ -253,6 +253,8 @@ class Crawler:
         else:
             print("Nessun div con la classe col-12 box paginatore_info py-2 nella pagina.")
 
+
+
 '''
 # Percorso del driver Chrome
 chromedriver_path = 'chrome/chromedriver.exe'
@@ -268,7 +270,8 @@ crawler = Crawler(
     json_file_path='json_file.json'
 )
 
-numero_articoli = crawler.conta_numero_articoli()
+numero_articoli = crawler.conta_numero_atti()
+
 next_page = 2
 links = crawler.prendi_link_in_div()
 while (crawler.clicca_pagina_successiva(next_page)) :
