@@ -24,3 +24,10 @@ def check_or_create_jsonl_file(nome_file):
 
     # Restituisci il percorso relativo del file JSONL
     return file_path
+
+def write_comment_to_jsonl(link, jsonl_file_path):
+    # Ottenere l'ultima parte del percorso URL
+    last_part_of_url = link.split('/')[-1]
+
+    with open(jsonl_file_path, "a") as jsonl_file:
+        jsonl_file.write("# " + last_part_of_url + "\n")
