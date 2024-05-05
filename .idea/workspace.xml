@@ -5,16 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d872d058-ba7c-4e0b-be66-0a65c6378496" name="Changes" comment="problemi con il ciclo: e come se iterando aprisse male i link dal secondo in poi">
-      <change afterPath="$PROJECT_DIR$/bug/2014 to 2004 output.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bug/from 2014 to 2004 elenco atti.jsonl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataset/from 2014 to 2004 elenco atti.jsonl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/from 2014 to 2012 elenco atti.jsonl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fileManager.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_27_04_2024_09_13_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_27_04_2024_09_13__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ElencoAtti.py" beforeDir="false" afterPath="$PROJECT_DIR$/ElencoAtti.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestioneDataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/GestioneDataset.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Selenium.py" beforeDir="false" afterPath="$PROJECT_DIR$/Selenium.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/links.txt" beforeDir="false" afterPath="$PROJECT_DIR$/links.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Selenium.py" beforeDir="false" afterPath="$PROJECT_DIR$/Crawler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/JsonCounter.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataset/JsonCounter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/from 2014 to 2004 elenco atti.jsonl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/links.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/postProcessor.py" beforeDir="false" afterPath="$PROJECT_DIR$/postProcessor.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,32 +49,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.ElencoAtti.executor": "Run",
-    "Python.JsonCounter.executor": "Run",
-    "Python.LinkToArray.executor": "Run",
-    "Python.Main.executor": "Run",
-    "Python.NormattivaCrawler (1).executor": "Run",
-    "Python.Selenium (1).executor": "Run",
-    "Python.Selenium.executor": "Run",
-    "Python.Test.executor": "Run",
-    "Python.postProcessor.executor": "Run",
-    "Python.requirements.executor": "Run",
-    "Python.test.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "lavoro-per-decadi",
-    "last_opened_file_path": "C:/Users/flava/OneDrive/Desktop/NormattivaCrawling",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.ElencoAtti.executor&quot;: &quot;Run&quot;,
+    &quot;Python.JsonCounter.executor&quot;: &quot;Run&quot;,
+    &quot;Python.LinkToArray.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.NormattivaCrawler (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.Selenium (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.Selenium.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.postProcessor.executor&quot;: &quot;Run&quot;,
+    &quot;Python.requirements.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;lavoro-per-decadi&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/flava/OneDrive/Desktop/NormattivaCrawling&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\flava\PycharmProjects\NormattivaCrawling\chrome" />
@@ -83,8 +86,8 @@
       <recent name="C:\Users\flava\PycharmProjects\NormattivaCrawling\" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Main">
-    <configuration name="ElencoAtti" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.JsonCounter">
+    <configuration name="JsonCounter" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="NormattivaCrawling" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -93,12 +96,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/dataset" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ElencoAtti.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dataset/JsonCounter.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -122,29 +125,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Selenium (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="NormattivaCrawling" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Selenium.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -199,13 +179,36 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="NormattivaCrawling" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Main" />
-        <item itemvalue="Python.requirements" />
-        <item itemvalue="Python.Selenium (1)" />
+        <item itemvalue="Python.JsonCounter" />
         <item itemvalue="Python.postProcessor" />
-        <item itemvalue="Python.ElencoAtti" />
+        <item itemvalue="Python.Main" />
+        <item itemvalue="Python.test" />
+        <item itemvalue="Python.requirements" />
       </list>
     </recent_temporary>
   </component>
@@ -247,6 +250,7 @@
       <workItem from="1714136903032" duration="599000" />
       <workItem from="1714212183427" duration="24793000" />
       <workItem from="1714631171220" duration="95000" />
+      <workItem from="1714716925396" duration="5491000" />
     </task>
     <task id="LOCAL-00001" summary="interally modified the idea, now i'm trying to drive the crawler">
       <option name="closed" value="true" />
@@ -393,11 +397,15 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/NormattivaCrawling$ElencoAtti.coverage" NAME="ElencoAtti Coverage Results" MODIFIED="1714544013652" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/NormattivaCrawling___Copia$JsonCounter.coverage" NAME="JsonCounter Coverage Results" MODIFIED="1714899421796" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dataset" />
+    <SUITE FILE_PATH="coverage/NormattivaCrawling___Copia$test.coverage" NAME="test Coverage Results" MODIFIED="1714632939461" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/NormattivaCrawling$postProcessor.coverage" NAME="postProcessor Coverage Results" MODIFIED="1714570447593" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/NormattivaCrawling$Selenium__1_.coverage" NAME="Selenium (1) Coverage Results" MODIFIED="1714570799377" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/NormattivaCrawling$Main.coverage" NAME="Main Coverage Results" MODIFIED="1714578105980" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/NormattivaCrawling$JsonCounter.coverage" NAME="JsonCounter Coverage Results" MODIFIED="1713864472729" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dataset" />
     <SUITE FILE_PATH="coverage/NormattivaCrawling$requirements.coverage" NAME="requirements Coverage Results" MODIFIED="1714572367507" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/NormattivaCrawling___Copia$postProcessor.coverage" NAME="postProcessor Coverage Results" MODIFIED="1714899250730" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/NormattivaCrawling___Copia$Main.coverage" NAME="Main Coverage Results" MODIFIED="1714717012891" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/NormattivaCrawling$Test.coverage" NAME="Test Coverage Results" MODIFIED="1713875212907" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dataset" />
   </component>
 </project>

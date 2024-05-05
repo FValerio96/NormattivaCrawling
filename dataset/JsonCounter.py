@@ -13,6 +13,6 @@ def count_jsonl(filename):
     return count
 
 # Esempio di utilizzo:
-filename = 'costituzione e codici.jsonl'  # Sostituisci con il percorso del tuo file JSONL
+filename = 'from 2014 to 2012 elenco atti.jsonl'  # Sostituisci con il percorso del tuo file JSONL
 json_count = count_jsonl(filename)
 print("Numero totale di oggetti JSON nel file:", json_count)

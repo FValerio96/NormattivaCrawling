@@ -24,7 +24,7 @@ def startingPageLinkToArrayElencoAtti(url):
             link_text = link.get_text().strip()  # Ottieni il testo del link e rimuovi eventuali spazi bianchi in eccesso
             try:
                 link_number = int(link_text)
-                if link_number >= 2004 and link_number <= 2014:
+                if link_number >= 2012 and link_number <= 2014:
                     link_url = link.get('href')  # Ottieni l'attributo 'href' del tag 'a'
                     # Il link è un URI relativo, lo concateno alla homepage per ottenere il path assoluto.
                     links.append("https://www.normattiva.it" + link_url)
