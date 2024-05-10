@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 this method capture link in <div class = col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9 ElencoAnni> 
 from 1946 to 2024 in the "elenco atti" page.
 '''
-def startingPageLinkToArrayElencoAtti(url):
+def startingPageLinkToArrayElencoAtti(url, starting_year, end_year):
     # Effettua la richiesta GET alla pagina
     response = requests.get(url)
     links = []
@@ -24,7 +24,7 @@ def startingPageLinkToArrayElencoAtti(url):
             link_text = link.get_text().strip()  # Ottieni il testo del link e rimuovi eventuali spazi bianchi in eccesso
             try:
                 link_number = int(link_text)
-                if link_number >= 2012 and link_number <= 2014:
+                if link_number >= starting_year and link_number <= end_year:
                     link_url = link.get('href')  # Ottieni l'attributo 'href' del tag 'a'
                     # Il link è un URI relativo, lo concateno alla homepage per ottenere il path assoluto.
                     links.append("https://www.normattiva.it" + link_url)

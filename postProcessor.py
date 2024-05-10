@@ -29,5 +29,5 @@ def remove_duplicate_text(jsonl_file):
 
 
 # Esempio di utilizzo:
-jsonl_file_path = 'dataset/from 2014 to 2012 elenco atti.jsonl'
+jsonl_file_path = 'dataset/from 2009 to 2006 elenco atti.jsonl'
 remove_duplicate_text(jsonl_file_path)
