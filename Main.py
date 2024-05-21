@@ -26,9 +26,6 @@ def crawling_per_anni(starting_year, ending_year):
     chrome_options.add_argument("webdriver.chrome.driver=" + chromedriver_path)
     driver = webdriver.Chrome(options=chrome_options)
 
-    '''
-    !!!AD OGNI NUOVO ANNO RICORDA DI MODIFICARE IL NOME DEL FILE!!!
-    '''
     crawler = Crawler(
         driver=driver,
         url='https://www.normattiva.it/ricerca/elencoPerData/anno/2016?tabID=0.06629760683032282&title=lbl.risultatoRicerca',
@@ -58,11 +55,11 @@ def crawling_per_anni(starting_year, ending_year):
             fileManager.remove_first_link_from_file("Links.txt")
             links_visited += 1
         except Exception as e:
-            print(Exception)
+            print(e)
 
         percentuale = links_visited / tot_links * 100
-        print(Fore.MAGENTA + "%link " + str(percentuale) +
-              "\nlink visitati: " + str(links_visited) +
-              "link totali: " + str(tot_links))
-        print(Fore.BLACK)
-crawling_per_anni(1983, 1988)
+        print(Fore.MAGENTA + "{:.2f}%".format(percentuale) +
+             "\nlink visitati: " + str(links_visited) +
+             " link totali: " + str(tot_links))
+        print(Fore.WHITE + " ")
+crawling_per_anni(1972, 1974)
