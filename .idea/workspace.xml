@@ -4,20 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d872d058-ba7c-4e0b-be66-0a65c6378496" name="Changes" comment="problemi con il ciclo: e come se iterando aprisse male i link dal secondo in poi">
-      <change afterPath="$PROJECT_DIR$/dataset/from 2014 to 2012 elenco atti.jsonl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fileManager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_27_04_2024_09_13_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_27_04_2024_09_13__Changes_.xml" beforeDir="false" />
+    <list default="true" id="d872d058-ba7c-4e0b-be66-0a65c6378496" name="Changes" comment="diminutio time.sleep ad un 1secondo e rimosso bug scritte tutte magenta">
+      <change afterPath="$PROJECT_DIR$/dataset/from 1959 to 1964 elenco atti.jsonl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_05_05_2024_18_27_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_05_05_2024_18_27__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ElencoAtti.py" beforeDir="false" afterPath="$PROJECT_DIR$/ElencoAtti.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestioneDataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/GestioneDataset.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Selenium.py" beforeDir="false" afterPath="$PROJECT_DIR$/Crawler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dataset/JsonCounter.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataset/JsonCounter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/from 2014 to 2004 elenco atti.jsonl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/links.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/from 1988 to 1983 elenco atti.jsonl" beforeDir="false" afterPath="$PROJECT_DIR$/dataset/from 1988 to 1983 elenco atti.jsonl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info.txt" beforeDir="false" afterPath="$PROJECT_DIR$/info.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/links.txt" beforeDir="false" afterPath="$PROJECT_DIR$/links.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/postProcessor.py" beforeDir="false" afterPath="$PROJECT_DIR$/postProcessor.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,7 +31,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="elenco-atti-from-2024-to-2014" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -65,7 +61,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;lavoro-per-decadi&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/flava/OneDrive/Desktop/NormattivaCrawling&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/flava/OneDrive/Desktop/NormattivaCrawling/dataset&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -77,6 +73,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\flava\OneDrive\Desktop\NormattivaCrawling\dataset" />
       <recent name="C:\Users\flava\PycharmProjects\NormattivaCrawling\chrome" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -86,7 +83,30 @@
       <recent name="C:\Users\flava\PycharmProjects\NormattivaCrawling\" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.JsonCounter">
+  <component name="RunManager" selected="Python.Main">
+    <configuration name="ElencoAtti" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="NormattivaCrawling" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ElencoAtti.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="JsonCounter" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="NormattivaCrawling" />
       <option name="ENV_FILES" value="" />
@@ -156,29 +176,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="requirements" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="NormattivaCrawling" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/requirements.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="NormattivaCrawling" />
       <option name="ENV_FILES" value="" />
@@ -204,11 +201,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Main" />
         <item itemvalue="Python.JsonCounter" />
         <item itemvalue="Python.postProcessor" />
-        <item itemvalue="Python.Main" />
+        <item itemvalue="Python.ElencoAtti" />
         <item itemvalue="Python.test" />
-        <item itemvalue="Python.requirements" />
       </list>
     </recent_temporary>
   </component>
@@ -251,6 +248,14 @@
       <workItem from="1714212183427" duration="24793000" />
       <workItem from="1714631171220" duration="95000" />
       <workItem from="1714716925396" duration="5491000" />
+      <workItem from="1714977387465" duration="44000" />
+      <workItem from="1714977456565" duration="3558000" />
+      <workItem from="1715007554751" duration="17417000" />
+      <workItem from="1715317709723" duration="15248000" />
+      <workItem from="1715688525729" duration="6365000" />
+      <workItem from="1715929405686" duration="1505000" />
+      <workItem from="1715951250070" duration="1238000" />
+      <workItem from="1716235962345" duration="1854000" />
     </task>
     <task id="LOCAL-00001" summary="interally modified the idea, now i'm trying to drive the crawler">
       <option name="closed" value="true" />
@@ -372,7 +377,31 @@
       <option name="project" value="LOCAL" />
       <updated>1714543599605</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="versione con funzione implementata">
+      <option name="closed" value="true" />
+      <created>1715335783754</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1715335783754</updated>
+    </task>
+    <task id="LOCAL-00017" summary="diminutio time.sleep ad un 1secondo e rimosso bug scritte tutte magenta">
+      <option name="closed" value="true" />
+      <created>1715506012414</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1715506012414</updated>
+    </task>
+    <task id="LOCAL-00018" summary="diminutio time.sleep ad un 1secondo e rimosso bug scritte tutte magenta">
+      <option name="closed" value="true" />
+      <created>1715506100565</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1715506100565</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -393,18 +422,21 @@
     <MESSAGE value="aggiustato problema loop, terminato 2015, ma da post processare" />
     <MESSAGE value="prima decade prelevata" />
     <MESSAGE value="problemi con il ciclo: e come se iterando aprisse male i link dal secondo in poi" />
-    <option name="LAST_COMMIT_MESSAGE" value="problemi con il ciclo: e come se iterando aprisse male i link dal secondo in poi" />
+    <MESSAGE value="update: nominazione del file automatica," />
+    <MESSAGE value="versione con funzione implementata" />
+    <MESSAGE value="diminutio time.sleep ad un 1secondo e rimosso bug scritte tutte magenta" />
+    <option name="LAST_COMMIT_MESSAGE" value="diminutio time.sleep ad un 1secondo e rimosso bug scritte tutte magenta" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/NormattivaCrawling$ElencoAtti.coverage" NAME="ElencoAtti Coverage Results" MODIFIED="1714544013652" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/NormattivaCrawling___Copia$JsonCounter.coverage" NAME="JsonCounter Coverage Results" MODIFIED="1714899421796" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dataset" />
+    <SUITE FILE_PATH="coverage/NormattivaCrawling$ElencoAtti.coverage" NAME="ElencoAtti Coverage Results" MODIFIED="1714977542639" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/NormattivaCrawling___Copia$test.coverage" NAME="test Coverage Results" MODIFIED="1714632939461" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/NormattivaCrawling$postProcessor.coverage" NAME="postProcessor Coverage Results" MODIFIED="1714570447593" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/NormattivaCrawling$Selenium__1_.coverage" NAME="Selenium (1) Coverage Results" MODIFIED="1714570799377" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/NormattivaCrawling$Main.coverage" NAME="Main Coverage Results" MODIFIED="1714578105980" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/NormattivaCrawling$JsonCounter.coverage" NAME="JsonCounter Coverage Results" MODIFIED="1713864472729" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dataset" />
+    <SUITE FILE_PATH="coverage/NormattivaCrawling$postProcessor.coverage" NAME="postProcessor Coverage Results" MODIFIED="1715543188587" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/NormattivaCrawling$Main.coverage" NAME="Main Coverage Results" MODIFIED="1716235988422" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/NormattivaCrawling$requirements.coverage" NAME="requirements Coverage Results" MODIFIED="1714572367507" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/NormattivaCrawling___Copia$postProcessor.coverage" NAME="postProcessor Coverage Results" MODIFIED="1714899250730" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/NormattivaCrawling$JsonCounter.coverage" NAME="JsonCounter Coverage Results" MODIFIED="1715543211355" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dataset" />
     <SUITE FILE_PATH="coverage/NormattivaCrawling___Copia$Main.coverage" NAME="Main Coverage Results" MODIFIED="1714717012891" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/NormattivaCrawling$Test.coverage" NAME="Test Coverage Results" MODIFIED="1713875212907" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dataset" />
   </component>

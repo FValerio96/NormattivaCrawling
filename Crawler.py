@@ -119,7 +119,7 @@ class Crawler:
                 if linkToClick is not None:
                     print("trovato prossimo link da seguire, clicco " , linkToClick.accessible_name)
                     linkToClick.click()
-                    time.sleep(4)
+                    time.sleep(1)
                     continueCrawling = self.trova_testo_in_classe_BS()
 
                     if continueCrawling:
