@@ -289,30 +289,3 @@ class Crawler:
 
 
 
-'''
-# Percorso del driver Chrome
-chromedriver_path = 'chrome/chromedriver.exe'
-chrome_options = Options()
-# chrome_options.add_argument("--headless")
-chrome_options.add_argument("webdriver.chrome.driver=" + chromedriver_path)
-# Inizializza il driver di Chrome
-driver = webdriver.Chrome(options=chrome_options)
-# jsonl_file_path = check_or_create_jsonl_file()
-crawler = Crawler(
-    driver=driver,
-    url='https://www.normattiva.it/ricerca/elencoPerData/anno/2015?tabID=0.2985707928192325&title=lbl.risultatoRicerca',
-    json_file_path='json_file.json'
-)
-
-numero_articoli = crawler.conta_numero_atti()
-
-next_page = 2
-links = crawler.prendi_link_in_div()
-while (crawler.clicca_pagina_successiva(next_page)) :
-    next_page +=1
-    links.append(crawler.prendi_link_in_div())
-
-
-for link in links:
-    print(link)
-'''

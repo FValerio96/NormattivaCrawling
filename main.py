@@ -25,6 +25,11 @@ def crawling_per_anni(starting_year, ending_year):
         url='https://www.normattiva.it/ricerca/elencoPerData/anno/2016?tabID=0.06629760683032282&title=lbl.risultatoRicerca',
         json_file_path=check_or_create_jsonl_file("from " + str(ending_year) + " to " +str(starting_year) + " elenco atti.jsonl")
     )
+    #In case of accidental deletion of the file
+    if not os.path.exists("links.txt"):
+        with open("links.txt", 'w') as file:
+            pass
+
     #se links è pieno vuol dire che il sw si è bloccato e stai riavviando quindi non prelevo i link
     if(os.path.getsize("links.txt") == 0):
         starting_url = "https://www.normattiva.it/ricerca/elencoPerData"
