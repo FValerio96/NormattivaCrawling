@@ -38,6 +38,53 @@ class Crawler:
         finally:
             print("articoli finiti")
 
+    def articoloSuccessivov2(self):
+        timeout = 0
+        try:
+            linkToClick: WebElement | None = None
+
+            links = None
+            allTimeout = [10, 20, 30, 50, 60]
+
+            # Attendere fino a quando almeno due link non sono cliccabili (presenti nella pagina)
+            # ciò si  basa sul fatto che il secondo link è articolo successivo
+            for timeout in allTimeout:
+                print('Esecuzione con timeout: ', timeout)
+                try:
+                    links = WebDriverWait(self.driver, timeout).until(
+                        EC.presence_of_all_elements_located((By.XPATH, '//a[@class="btn"]'))
+                    )
+
+                except Exception as e:
+                    if isinstance(e, KeyboardInterrupt):
+                        raise KeyboardInterrupt
+                    print('Timeout: ', timeout, "and url: ", self.driver.current_url)
+
+                for link in links:
+                    if link.accessible_name == "articolo successivo":
+                        linkToClick = link
+                        break
+
+            # se è avvalorato è avvalorato con articolo successivo
+                if linkToClick is not None:
+                    print("trovato prossimo link da seguire, clicco " , linkToClick.accessible_name)
+                    linkToClick.click()
+                    time.sleep(1)
+                    continueCrawling = self.trova_testo_in_classe_BS()
+
+                    if continueCrawling:
+                        return True
+                else:
+                    print("Non ci sono altri link 'articolo successivo' nella pagina")
+                # e quindi possiamo fermarci.
+            return False
+        except Exception as e:
+            if isinstance(e, KeyboardInterrupt):
+                raise KeyboardInterrupt
+            print("Errore durante il clic sul link:", e)
+            print('Timeout: ', timeout, "and url: ", self.driver.current_url)
+            return False
+
     def trova_testo_in_classe_BS(self):
         try:
             text_content = None
@@ -88,56 +135,12 @@ class Crawler:
         self.lastRowInserted = text_content
         return True
 
-    def articoloSuccessivov2(self):
-        timeout = 0
-        try:
-            linkToClick: WebElement | None = None
 
-            links = None
-            allTimeout = [10, 20, 30, 50, 60]
-
-            # Attendere fino a quando almeno due link non sono cliccabili (presenti nella pagina)
-            # ciò si  basa sul fatto che il secondo link è articolo successivo
-            for timeout in allTimeout:
-                print('Esecuzione con timeout: ', timeout)
-                try:
-                    links = WebDriverWait(self.driver, timeout).until(
-                        EC.presence_of_all_elements_located((By.XPATH, '//a[@class="btn"]'))
-                    )
-
-                except Exception as e:
-                    if isinstance(e, KeyboardInterrupt):
-                        raise KeyboardInterrupt
-                    print('Timeout: ', timeout, "and url: ", self.driver.current_url)
-
-                for link in links:
-                    if link.accessible_name == "articolo successivo":
-                        linkToClick = link
-                        break
-
-            # se è avvalorato è avvalorato con articolo successivo
-                if linkToClick is not None:
-                    print("trovato prossimo link da seguire, clicco " , linkToClick.accessible_name)
-                    linkToClick.click()
-                    time.sleep(1)
-                    continueCrawling = self.trova_testo_in_classe_BS()
-
-                    if continueCrawling:
-                        return True
-                else:
-                    print("Non ci sono altri link 'articolo successivo' nella pagina")
-                # e quindi possiamo fermarci.
-            return False
-        except Exception as e:
-            if isinstance(e, KeyboardInterrupt):
-                raise KeyboardInterrupt
-            print("Errore durante il clic sul link:", e)
-            print('Timeout: ', timeout, "and url: ", self.driver.current_url)
-            return False
 
     def setNewUrl(self, url):
         self.driver.get(url)
         print("il driver si sposta su " + url)
+
 
     '''
     this method return the number of article in page
@@ -286,6 +289,149 @@ class Crawler:
                 fileManager.remove_first_link_from_file("./links.txt")
             except Exception as e:
                 print(Exception)
+
+    '''
+    NEW METHODS FOR ITALGIURE'S SCRAPING
+    '''
+
+    from selenium.webdriver.common.by import By
+    from selenium.webdriver.support.ui import WebDriverWait
+    from selenium.webdriver.support import expected_conditions as EC
+    from selenium.common.exceptions import TimeoutException
+
+    from selenium.webdriver.common.by import By
+    from selenium.webdriver.support.ui import WebDriverWait
+    from selenium.webdriver.support import expected_conditions as EC
+    from selenium.common.exceptions import TimeoutException
+
+    from selenium.webdriver.common.by import By
+    from selenium.webdriver.support.ui import WebDriverWait
+    from selenium.webdriver.support import expected_conditions as EC
+    from selenium.common.exceptions import TimeoutException
+
+    '''
+        con questo metodo ricerco la zona di interesse sulla a sx, quello che si presenta come un menù a tendina
+        in realtà è una cella di una tabella riconoscibile attraverso l'attributo role
+    '''
+    def trova_complementary_e_stampa(self):
+        self.driver.execute_cdp_cmd('Network.clearBrowserCache', {})
+        try:
+            # Trova il <td> con role="complementary"
+            print("Cercando il <td> con role='complementary'...")
+            td_complementary = WebDriverWait(self.driver, 10).until(
+                EC.presence_of_element_located((By.XPATH, '//td[@role="complementary"]'))
+            )
+            if td_complementary:
+                print("<td> con role='complementary' trovato.")
+
+                # Trova tutti i <span> con class="keyIgnore" all'interno del <td>
+                spans = td_complementary.find_elements(By.XPATH, './/span[@class="keyIgnore"]')
+                if spans:
+                    print(f"Trovati {len(spans)} elementi <span> con class='keyIgnore':")
+                    for span in spans:
+                        # Stampa il testo all'interno del <span>
+                        print(span.text.strip())
+                else:
+                    print("Nessun elemento <span> con class='keyIgnore' trovato.")
+            else:
+                print("<td> con role='complementary' non trovato.")
+
+        except TimeoutException:
+            print("Non è stato possibile trovare il <td> con role='complementary' entro il tempo limite.")
+        except Exception as e:
+            print(f"Errore: {str(e)}")
+
+    '''
+    = al metodo precedente ma clicca
+    '''
+    def trova_complementary_e_clicca2(self):
+        #svuoto la cache altrimeti non funziona
+        self.driver.execute_cdp_cmd('Network.clearBrowserCache', {})
+        try:
+            # Trova il <td> con role="complementary"
+            print("Cercando il <td> con role='complementary'...")
+            td_complementary = WebDriverWait(self.driver, 10).until(
+                EC.presence_of_element_located((By.XPATH, '//td[@role="complementary"]'))
+            )
+            if td_complementary:
+                print("<td> con role='complementary' trovato.")
+
+                # Trova tutti i <span> con class="keyIgnore" all'interno del <td>
+                spans = td_complementary.find_elements(By.XPATH, './/span[@class="keyIgnore"]')
+                if spans:
+                    print(f"Trovati {len(spans)} elementi <span> con class='keyIgnore':")
+                    for span in spans:
+                        # Stampa il testo all'interno del <span>
+                        span_text = span.text.strip()
+                        print(f"Testo trovato: {span_text}")
+
+                        # Clicca sul <span>
+                        print(f"Cliccando su: {span_text}")
+                else:
+                    print("Nessun elemento <span> con class='keyIgnore' trovato.")
+            else:
+                print("<td> con role='complementary' non trovato.")
+
+        except TimeoutException:
+            print("Non è stato possibile trovare il <td> con role='complementary' entro il tempo limite.")
+        except Exception as e:
+            print(f"Errore: {str(e)}")
+
+
+    '''probabilmente inutile'''
+    def clicca_civile(self):
+        try:
+            print("Cercando il tag <tbody> nella tabella con ID 'facets'...")
+            # Trova il tag <tbody> all'interno della tabella con ID "facets"
+            tbody = WebDriverWait(self.driver, 10).until(
+                EC.presence_of_element_located((By.XPATH, '//table[@id="facets"]/tbody'))
+            )
+            if tbody:
+                print("<tbody> trovato!")
+
+                # Cerca l'elemento "CIVILE" all'interno del <tbody>
+                print("Cercando l'elemento con testo 'CIVILE'...")
+                civile_element = tbody.find_element(By.XPATH, './/span[@class="keyIgnore" and text()="CIVILE"]')
+
+                if civile_element:
+                    print("Elemento 'CIVILE' trovato. Cliccando...")
+                    civile_element.click()
+                else:
+                    print("Elemento 'CIVILE' non trovato all'interno del <tbody>.")
+
+        except TimeoutException:
+            print("Non è stato possibile trovare il <tbody> o l'elemento 'CIVILE' entro il tempo limite.")
+        except Exception as e:
+            print(f"Errore durante il clic su 'CIVILE': {str(e)}")
+
+    '''
+    not works
+    '''
+    def clicca_pdf(self):
+        try:
+            # Trova tutti gli elementi che rappresentano i PDF nel box
+            pdf_links = WebDriverWait(self.driver, 10).until(
+                EC.presence_of_all_elements_located((By.XPATH, '//div[@class="results"]//a[contains(@href, ".pdf")]'))
+            )
+
+            # Itera su ciascun link e clicca
+            for pdf_link in pdf_links[:10]:  # Limita ai primi 10 PDF
+                href = pdf_link.get_attribute("href")  # Trova l'URL del PDF
+                print(f"Sto cliccando sul link PDF: {href}")
+                pdf_link.click()
+
+                # Aspetta un momento per assicurarti che l'azione venga eseguita
+                WebDriverWait(self.driver, 10).until(
+                    EC.url_changes(self.driver.current_url)
+                )
+
+                # Torna indietro se necessario
+                self.driver.back()
+        except Exception as e:
+            print("Errore durante il clic sui PDF:", str(e))
+
+
+
 
 
 
