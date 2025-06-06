@@ -1,5 +1,11 @@
 # NormattivaCrawling
 
+## License
+
+This project is licensed under the terms of the GNU General Public License v3.0 (GPLv3).  
+Any modification must be released under the same license.  
+Commercial or private proprietary use is **not allowed** without releasing the source code.
+
 ## Overview
 
 NormattivaCrawling is a Python-based web crawler designed to extract data from Normattiva website. The crawler automates the process of navigating the website, collecting specific information, and storing it in a structured format for further processing and analysis.
